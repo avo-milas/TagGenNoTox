@@ -28,7 +28,49 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+**Для выполнения инференса**:
 
+1. В ноутбуке `inference.ipynb` указать путь до датасета с тестовыми данными, который будет лежать в папке `data`:
+```python
+test_data = pd.read_csv("...путь...")
+```
+
+2. Запустить все ячейки в ноутбуке
+3. Результаты будут лежать в файле `submission_test_data.csv`
+
+- **model:**
+`cnn_model.py` - CNN модель для двух уровней тегирования
+
+Параметры модели, полученные после обучения:
+`mlb_first_level.pkl`
+`mlb_second_level.pkl`
+`model_first_level.pth`
+`model_second_level.pth`
+`tag_mapping.pkl`
+
+- **utils:**
+  
+`data_preprocessing.py` - лемматизация, удаление стоп-слов, токенизация и создание эмбеддингов
+
+`tag_extraction.py` - извлечение тегов на разных уровнях, фильтрация тегов 2 уровня по 1
+
+- **notebooks:**
+  
+`baseline.ipynb` - обучение и тестирование модели
+
+`EDA.ipynb` - data exploration
+
+`inference.ipynb` - запуск модели на тестовых данных
+
+`video_extracting` - извлечение видео из датасетов
+
+- **data:**
+  
+`train_data_categories.csv` - обучающая выборка
+
+`IAB_tags.csv` - таксономия тегов
+
+`data_proc.pkl` - обработанные данные
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
